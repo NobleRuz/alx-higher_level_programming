@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-from sys import argv
-
-
-def principal():
-    print('{} argument'.format(len(argv) - 1), end='')
-    if len(argv) == 1:
-        print('s.')
-    elif len(argv) == 2:
-        print(':')
-    else:
-        print('s:')
-    for i in range(1, len(argv)):
-        print('{}: {}'.format(i, argv[i]))
 if __name__ == "__main__":
-    principal()
+    import sys
+    total = len(sys.argv)
+    if total <= 1:
+        print("0 arguments.")
+    else:
+        if total == 2:
+            print("{:d} argument:".format(total - 1))
+        else:
+            print("{:d} arguments:".format(total - 1))
+        for i in range(1, total):
+            print("{:d}: {}".format(i, sys.argv[i]))
